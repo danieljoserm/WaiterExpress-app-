@@ -1,1 +1,67 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="mycontent" side="left" (ionOpen)="menuopen()">
+
+    <ion-header>
+        <ion-toolbar>
+
+            <ion-title>
+                <ion-icon name="key">
+                </ion-icon>
+            </ion-title>
+            <h3>WEX </h3>
+            <p>Menu </p>
+        </ion-toolbar>
+    </ion-header>
+
+
+    <ion-content>
+
+
+        <ion-label>Mis portones</ion-label>
+        <button ion-item menuClose><ion-icon name="add"><span style="padding-left:10px;"></span></ion-icon>Agregar puerta </button>
+        <button ion-item><ion-icon name="trash"><span style="padding-left:10px;"></span></ion-icon>Eliminar puerta </button>
+        <button ion-item><ion-icon name="list"><span style="padding-left:10px;"></span></ion-icon>Seleccionar puerta </button>
+
+        <ion-label>Social</ion-label>
+        <button ion-item><ion-icon name="share"><span style="padding-left:10px;"></span></ion-icon>Compartir Porton </button>
+        <ion-label>Configuracion</ion-label>
+        <button ion-item><ion-icon name="cog"><span style="padding-left:10px;"></span></ion-icon>Cambiar contrasena</button>
+        <button ion-item><ion-icon name="help"><span style="padding-left:10px;"></span></ion-icon>Cambiar idioma</button>
+        <button ion-item><ion-icon name="help"><span style="padding-left:10px;"></span></ion-icon>Cerrar sesion</button>
+
+    </ion-content>
+
+</ion-menu>
+
+
+<ion-menu [content]="mycontent" side="right" (ionOpen)="menuopenright()">
+
+    <ion-header>
+        <ion-toolbar>
+
+            <ion-title>
+                <ion-icon name="key">
+                </ion-icon>
+            </ion-title>
+            <h3>Desglose </h3>
+            <p>Subtotal:5000</p>
+        </ion-toolbar>
+    </ion-header>
+
+
+    <ion-content>
+
+
+        
+
+    </ion-content>
+
+</ion-menu>
+
+
+
+
+
+
+
+
+<ion-nav #mycontent [root]="rootPage"></ion-nav>
