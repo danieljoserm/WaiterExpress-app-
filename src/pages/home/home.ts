@@ -3,7 +3,9 @@ import { RestaurantePage } from './../restaurante/restaurante';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
-import { ToastController } from 'ionic-angular';@Component({
+import { ToastController } from 'ionic-angular';
+
+@Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })

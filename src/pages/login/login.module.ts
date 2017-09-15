@@ -1,3 +1,4 @@
+import { SharedModule } from './../../app/shared/SharedModule';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { LoginPage } from './login';
@@ -7,6 +8,7 @@ import { LoginPage } from './login';
     LoginPage,
   ],
   imports: [
+   SharedModule,
     IonicPageModule.forChild(LoginPage),
   ],
 })

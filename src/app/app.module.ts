@@ -5,7 +5,8 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-
+import {HttpModule,Http} from '@angular/http';
+import {TranslateModule,TranslateLoader,TranslateStaticLoader} from 'ng2-translate';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
@@ -23,6 +24,11 @@ import { HomePage } from '../pages/home/home';
     
     BrowserModule,
     IonicModule.forRoot(MyApp),
+      TranslateModule.forRoot({
+            provide: TranslateLoader,
+            useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),
+            deps: [Http]
+        }),
   
   ],
   bootstrap: [IonicApp],

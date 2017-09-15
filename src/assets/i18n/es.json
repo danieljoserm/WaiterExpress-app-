@@ -1,0 +1,12 @@
+{
+
+
+"LOGINPAGE" : {   "USERNAMELABEL": "Nombre de usuario",
+     "PASSWORDLABEL":"Contraseña",
+    "LOGINLABEL" : "Ingresar",
+    "REGISTERLABEL" : "Registrar"
+
+
+}
+     
+}

@@ -8,7 +8,7 @@ import { MenuController } from 'ionic-angular';
 import { HomePage } from '../pages/home/home';
 import { AlertController } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
-
+import {TranslateService} from 'ng2-translate';
 @Component({
   templateUrl: 'app.html'
 })
@@ -25,12 +25,13 @@ export class MyApp {
       splashScreen: SplashScreen,
           private alertCtrl: AlertController,
           public toastCtrl: ToastController,
-       
+       translate:TranslateService,
     ) {
    
     platform.ready().then(() => {
       
-
+        translate.addLangs(["en", "es"]);
+        translate.setDefaultLang('en');
      // this.nav.push(RestaurantePage);
      // this.nav.push(LoginPage);
 
