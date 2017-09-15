@@ -1,3 +1,6 @@
+import { HomePage } from './../home/home';
+import { RestaurantePage } from './../restaurante/restaurante';
+import { RegisterPage } from './../register/register';
 
 
 import { Component } from '@angular/core';
@@ -35,5 +38,20 @@ export class LoginPage {
   ionViewDidLoad() {
    
   }
+
+
+  OpenRegisterPage(){
+
+  this.navCtrl.push(RegisterPage);  
+
+
+  }
+  OpenRestaurantePage(){
+
+  this.navCtrl.push(RestaurantePage);  
+
+
+  }
+
 
 }

@@ -1,4 +1,4 @@
-<ion-menu [content]="mycontent" side="left" (ionOpen)="menuopen()">
+<ion-menu [content]="mycontent" side="left" (ionOpen)="menuopen()" persistent=true >
 
     <ion-header>
         <ion-toolbar>
@@ -33,7 +33,7 @@
 </ion-menu>
 
 
-<ion-menu [content]="mycontent" side="right" (ionOpen)="menuopenright()">
+<ion-menu [content]="mycontent" side="right" (ionOpen)="menuopenright()" persistent=true >
 
     <ion-header>
         <ion-toolbar>

@@ -1,5 +1,10 @@
+import { RegisterPage } from './../pages/register/register';
 import { LoginPage } from './../pages/login/login';
 import { RestaurantePage } from './../pages/restaurante/restaurante';
+import { SharedModule } from './shared/SharedModule';
+
+
+
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -14,14 +19,14 @@ import { HomePage } from '../pages/home/home';
 
 
 
-
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,LoginPage,RestaurantePage
+    HomePage,RestaurantePage,LoginPage,RegisterPage
   ],
   imports: [
-    
+    SharedModule,
+ 
     BrowserModule,
     IonicModule.forRoot(MyApp),
       TranslateModule.forRoot({
@@ -34,7 +39,7 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,LoginPage,RestaurantePage
+    HomePage,RestaurantePage,LoginPage,RegisterPage
   ],
   providers: [
     StatusBar,

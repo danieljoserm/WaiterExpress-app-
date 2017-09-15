@@ -8,7 +8,7 @@ import { LoginPage } from './login';
     LoginPage,
   ],
   imports: [
-   SharedModule,
+    SharedModule,
     IonicPageModule.forChild(LoginPage),
   ],
 })

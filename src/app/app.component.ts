@@ -8,7 +8,7 @@ import { MenuController } from 'ionic-angular';
 import { HomePage } from '../pages/home/home';
 import { AlertController } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
-import {TranslateService} from 'ng2-translate';
+import { TranslateService } from 'ng2-translate';
 @Component({
   templateUrl: 'app.html'
 })
@@ -21,17 +21,17 @@ export class MyApp {
 
 
   constructor(platform: Platform,
-     statusBar: StatusBar,
-      splashScreen: SplashScreen,
-          private alertCtrl: AlertController,
-          public toastCtrl: ToastController,
-       translate:TranslateService,
-    ) {
-   
+    statusBar: StatusBar,
+    splashScreen: SplashScreen,
+    private alertCtrl: AlertController,
+    public toastCtrl: ToastController,
+    translate: TranslateService,
+  ) {
+
     platform.ready().then(() => {
-      
-        translate.addLangs(["en", "es"]);
-        translate.setDefaultLang('en');
+
+      translate.addLangs(["en", "es"]);
+      translate.setDefaultLang('es');
      // this.nav.push(RestaurantePage);
      // this.nav.push(LoginPage);
 
@@ -39,13 +39,13 @@ export class MyApp {
       splashScreen.hide();
     });
   }
-ngOnInit(){
- 
+  ngOnInit() {
 
-}
+
+  }
   ionViewDidLoad() {
 
-  
+
 
   }
 
@@ -57,26 +57,26 @@ ngOnInit(){
 
 
 
-alertgeneral(titulo :string, subtitulo: string){
-   let alert= this.alertCtrl.create({
-        title:titulo,
-        subTitle: subtitulo,
-        buttons: ["OK"]
+  alertgeneral(titulo: string, subtitulo: string) {
+    let alert = this.alertCtrl.create({
+      title: titulo,
+      subTitle: subtitulo,
+      buttons: ["OK"]
 
 
-      }) 
-       alert.present();
+    })
+    alert.present();
 
-}
+  }
 
 
-toastgeneral(message :string){
-      let toast = this.toastCtrl.create({
-                    message: message,
-                    duration: 3000
-                  });
-                  toast.present();
-}
+  toastgeneral(message: string) {
+    let toast = this.toastCtrl.create({
+      message: message,
+      duration: 3000
+    });
+    toast.present();
+  }
 
 
 
