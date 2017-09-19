@@ -2,9 +2,6 @@ import { RegisterPage } from './../pages/register/register';
 import { LoginPage } from './../pages/login/login';
 import { RestaurantePage } from './../pages/restaurante/restaurante';
 import { SharedModule } from './shared/SharedModule';
-
-
-
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';

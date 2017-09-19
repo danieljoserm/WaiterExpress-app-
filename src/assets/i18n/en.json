@@ -5,7 +5,15 @@
     "PASSWORDLABEL":"Password",
     "LOGINLABEL" : "Login",
     "REGISTERLABEL" : "Register"
+    },
+
+     "REGISTERPAGE" : { "USERNAMELABEL": "Username",
+    "PASSWORDLABEL":"Password",
+    "PASSWORDVERIFICATIONLABEL" : "Password Verification",
+    "EMAILLABEL" : "Email",
+    "REGISTERLABEL" : "Register"
     }
+
 
 
 

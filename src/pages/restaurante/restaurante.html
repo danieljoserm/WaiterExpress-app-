@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar hideBackButton="true" >
+  <ion-navbar hideBackButton="true">
     <ion-title>RestaurantePage</ion-title>
   </ion-navbar>
 
@@ -14,5 +14,31 @@
 
 
 <ion-content padding>
+
+  <ion-grid class="card-rest">
+    <ion-row >
+      <ion-col *ngFor="let Restaurante of Restaurantearray;let i=index" wrap>
+        <ion-card (click)="OpenMenuPage()">
+          <img src="assets/img/rest.jpg" />
+          <ion-card-content>
+            <ion-card-title>
+              {{Restaurantearray[i].Nombre}}
+            </ion-card-title>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      </ion-row>
+  </ion-grid>
+
+
+
+
+
+
+
+
+
+
 
 </ion-content>

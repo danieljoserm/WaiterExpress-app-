@@ -4,9 +4,21 @@
 "LOGINPAGE" : {   "USERNAMELABEL": "Nombre de usuario",
      "PASSWORDLABEL":"Contraseña",
     "LOGINLABEL" : "Ingresar",
-    "REGISTERLABEL" : "Registrar"
+    "REGISTERLABEL" : "Registrarse"
+
+
+},
+
+
+"REGISTERPAGE" : {   "USERNAMELABEL": "Nombre de usuario",
+     "PASSWORDLABEL":"Contraseña",
+    "PASSWORDVERIFICATIONLABEL" : "Verificacion de contrasena",
+    "EMAILLABEL" : "Correo electronico",
+    "REGISTERLABEL" : "Registrarse"
 
 
 }
+
+
      
 }

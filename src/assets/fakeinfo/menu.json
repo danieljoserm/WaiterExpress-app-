@@ -1,0 +1,8 @@
+[{"id_producto":"1","categoria":"Entradas","nombre_producto":"patacones","precio":"3500","submenu":[{"submenu_categoria":"carne","submenu_tipo":"1","submenu_items":[{"nombre_submenu_items":"pollo"},{"nombre_submenu_items":"carne"},{"nombre_submenu_items":"jamon"},{"nombre_submenu_items":"mano de piedra"},{"nombre_submenu_items":"pavo"}]
+}]},
+
+
+
+{"id_producto":"2","categoria":"Platos Fuertes","nombre_producto":"pasta Alfredo","precio":"4500","submenu":
+[{"submenu_categoria":"carne","submenu_tipo":"1","submenu_items":[{"nombre_submenu_items":"pollo"},{"nombre_submenu_items":"carne"}]},{"submenu_categoria":"ensalada","submenu_tipo":"0","submenu_items":[{"nombre_submenu_items":"tomate"},{"nombre_submenu_items":"lechuga"},{"nombre_submenu_items":"zanahoria"}]}]
+}]
