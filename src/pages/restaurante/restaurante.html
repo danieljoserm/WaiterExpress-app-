@@ -18,7 +18,7 @@
   <ion-grid class="card-rest">
     <ion-row >
       <ion-col *ngFor="let Restaurante of Restaurantearray;let i=index" wrap>
-        <ion-card (click)="OpenMenuPage()">
+        <ion-card (click)="OpenMenuPage(Restaurante.ID)">
           <img src="assets/img/rest.jpg" />
           <ion-card-content>
             <ion-card-title>

@@ -39,7 +39,7 @@ Restaurantearray : RestauranteClass[]=[];
        for (let numero = 0; numero < Object.keys(data).length; numero++)  {
         this.Restaurantearray.push(new RestauranteClass(data[numero].Nombre,"",data[numero].Imagen,data[numero].id));
         }   
-    console.log(data[0].Nombre);
+    //console.log(data[0].Nombre);
     this.toastgeneral(this.Restaurantearray[3].Nombre);
 
       
@@ -84,9 +84,10 @@ toastgeneral(message :string){
 
 
 
-OpenMenuPage(){
+OpenMenuPage(Restaurante: string ){
+var obj={RestNombre:Restaurante};
 
-this.navCtrl.push(HomePage);
+this.navCtrl.push(HomePage,obj);
 
 }
 

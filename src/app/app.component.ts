@@ -8,7 +8,7 @@ import { MenuController } from 'ionic-angular';
 import { HomePage } from '../pages/home/home';
 import { AlertController } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
-import { TranslateService } from 'ng2-translate';
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   templateUrl: 'app.html'
 })
