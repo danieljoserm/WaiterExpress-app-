@@ -7,19 +7,58 @@
 
 
 
-<ion-content padding>
-<button ion-item *ngFor="let menuitem of menu; let i=index" >
- 
- <button ion-button item-start >-</button>
-  <ion-avatar >
+<ion-content no-padding>
+  <ion-item *ngFor="let menuitem of menu; let i=index" class="andrea" padding>
+
+    <button ion-button id="butonmenos" (click)="restarcantidad(i)">-</button>
+    <ion-avatar id="avatar">
       <img src="assets/img/rest.jpg">
     </ion-avatar>
- 
-  <h2>
-{{menuitem.nombre_producto}}
-  </h2>
-<p>HOla </p>
-<button ion-button item-end>+</button>
 
-  </button>
+    <div id="div">
+      <h2 id="h2">
+        {{menuitem.nombre_producto}}
+      </h2>
+      <p id="p">Precio:3500</p>
+      <button ion-button (click)="toggleGroup(i)" id="butonview" *ngIf="tienesubmenu(menuitem)">ver detalles</button>
+    </div>
+    <h1 id="cantidad">{{menuitem.cantidad}}</h1>
+
+    <button ion-button id="butonmas" (click)="sumarcantidad(i)">+</button>
+
+
+    <div id="extender" *ngIf="isGroupShown(i)">
+      <div *ngFor="let menuitem of menu[i].submenu; let j=index">
+        <h2 id="submenutitulo">{{menuitem.submenu_categoria}}</h2>
+        <ion-grid>
+          <ion-row>
+            <ion-col *ngFor="let submenuitem of menu[i].submenu[j].submenu_items" wrap>
+              <ion-item *ngIf="excluyenteoincluyente(menuitem.submenu_tipo);else elseBlock">
+                <ion-label>{{submenuitem.nombre_submenu_items}}</ion-label>
+                <ion-checkbox [(ngModel)]="submenuitem.estado" (ionChange)="checkboxchangeexcluyente()"></ion-checkbox>
+              </ion-item>
+
+              <ng-template #elseBlock>
+                <ion-item>
+                  <ion-label>{{submenuitem.nombre_submenu_items}}</ion-label>
+                  <ion-checkbox [(ngModel)]="submenuitem.estado" (ionChange)="checkboxchangeincluyente()"></ion-checkbox>
+                </ion-item>
+              </ng-template>
+
+
+
+
+
+
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+      </div>
+
+
+
+    </div>
+  </ion-item>
+
 </ion-content>

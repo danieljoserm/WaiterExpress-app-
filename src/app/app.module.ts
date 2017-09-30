@@ -1,3 +1,4 @@
+import { MenuService } from './../providers/MenuService';
 import { MenuPage } from './../pages/menu/menu';
 import { RegisterPage } from './../pages/register/register';
 import { LoginPage } from './../pages/login/login';
@@ -14,6 +15,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SuperTabsModule } from 'ionic2-super-tabs';
+
 //import {TranslateLoader} from '@ngx-translate/http-loader';
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -46,6 +48,7 @@ export function createTranslateLoader(http: Http) {
     HomePage,RestaurantePage,LoginPage,RegisterPage,MenuPage
   ],
   providers: [
+    MenuService,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

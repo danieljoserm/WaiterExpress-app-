@@ -1,3 +1,4 @@
+import { MenuService } from './../../providers/MenuService';
 import { MenuPage } from './../menu/menu';
 import { pruebaclass } from './pruebaclass';
 import { SubMenuItemsClass } from './SubMenuItemsClass';
@@ -14,6 +15,7 @@ import {deserialize} from "serializer.ts/Serializer";
 import {serialize} from "serializer.ts/Serializer";
 import {SuperTabsController} from 'ionic2-super-tabs';
 import { SuperTabsModule } from 'ionic2-super-tabs';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -25,14 +27,15 @@ tabmenu : any = MenuPage;
 menuany : any; 
 categoriafilter:any;
 Menu : MenuClass[]=[];
-
+menyany1 :any;
 tabbolean: boolean=false;
   constructor(public navCtrl: NavController,
     public toastCtrl: ToastController,
     private alertCtrl: AlertController,
     public navParams :NavParams,
     public http :Http,
-    public superTabsCtrl: SuperTabsController
+    public superTabsCtrl: SuperTabsController,
+    public menuService : MenuService
   ) { 
 
  let DataLocal = this.http.get('assets/fakeinfo/menu.json').map(res => res.json()).subscribe(
@@ -43,6 +46,11 @@ tabbolean: boolean=false;
 
     this.menuany=data;
     this.categoriafilter=this.Rmduplicateitems();
+  this.menuany=this.Addstatetosubitems(this.menuany);
+  this.menuService.setMenuEntrada(this.menuany);
+
+
+
 
     this.tabbolean=true;
       },
@@ -115,6 +123,39 @@ ParseJSONtoMenuClass(menu:any,Menuclass : MenuClass[] )
       
 
     }
+
+}
+
+Addstatetosubitems(menu:any)
+{  
+    for (let numero = 0; numero < Object.keys(menu).length; numero++)  {
+  
+      menu[numero].cantidad=0;
+      menu[numero].index=numero;
+    
+      if(menu[numero].submenu!=""){
+
+        for(let numero1 = 0; numero1 < Object.keys(menu[numero].submenu).length; numero1++){
+
+           
+
+         
+
+            for(let numero2 = 0; numero2 < Object.keys(menu[numero].submenu[numero1].submenu_items).length; numero2++){
+
+            menu[numero].submenu[numero1].submenu_items[numero2].estado=false;
+
+            }
+        
+        
+          }
+
+      }
+   
+      
+
+    }
+    return menu;
 
 }
 
