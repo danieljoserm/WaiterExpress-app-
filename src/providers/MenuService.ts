@@ -4,7 +4,8 @@ import {Injectable} from '@angular/core';
 @Injectable()
 export class MenuService{
 
-menu:any;    
+private menu:any;    
+private menuseleccionados
 
 constructor(){
 
@@ -21,13 +22,13 @@ console.log(this.menu);
 
 
 
-Cambiarvaloressubitems(menu : any){
-var prueba;
+Cambiarvaloressubitems(index:any, indexsubmenu:any,indexsubmenuitem){
 
 
+!this.menu[index].submenu[indexsubmenu].submenu_items[indexsubmenuitem].estado;
 
 
-
+console.log(this.menu);
 
 
 
@@ -42,6 +43,13 @@ this.menu[index].cantidad=cantidad;
 console.log(this.menu);
 
 }
+
+public returnmenu(){
+
+return this.menu;
+
+}
+
 
 
 

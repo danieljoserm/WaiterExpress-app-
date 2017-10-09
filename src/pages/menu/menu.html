@@ -10,7 +10,7 @@
 <ion-content no-padding>
   <ion-item *ngFor="let menuitem of menu; let i=index" class="andrea" padding>
 
-    <button ion-button id="butonmenos" (click)="restarcantidad(i)">-</button>
+    <button ion-button id="butonmenos" (click)="restarcantidad(i,menu[i].index)">-</button>
     <ion-avatar id="avatar">
       <img src="assets/img/rest.jpg">
     </ion-avatar>
@@ -19,12 +19,12 @@
       <h2 id="h2">
         {{menuitem.nombre_producto}}
       </h2>
-      <p id="p">Precio:3500</p>
+      <p id="p">{{menuitem.precio}}</p>
       <button ion-button (click)="toggleGroup(i)" id="butonview" *ngIf="tienesubmenu(menuitem)">ver detalles</button>
     </div>
     <h1 id="cantidad">{{menuitem.cantidad}}</h1>
 
-    <button ion-button id="butonmas" (click)="sumarcantidad(i)">+</button>
+    <button ion-button id="butonmas" (click)="sumarcantidad(i,menu[i].index)">+</button>
 
 
     <div id="extender" *ngIf="isGroupShown(i)">
@@ -32,16 +32,16 @@
         <h2 id="submenutitulo">{{menuitem.submenu_categoria}}</h2>
         <ion-grid>
           <ion-row>
-            <ion-col *ngFor="let submenuitem of menu[i].submenu[j].submenu_items" wrap>
+            <ion-col *ngFor="let submenuitem of menu[i].submenu[j].submenu_items;let y=index" wrap>
               <ion-item *ngIf="excluyenteoincluyente(menuitem.submenu_tipo);else elseBlock">
                 <ion-label>{{submenuitem.nombre_submenu_items}}</ion-label>
-                <ion-checkbox [(ngModel)]="submenuitem.estado" (ionChange)="checkboxchangeexcluyente()"></ion-checkbox>
+                <ion-checkbox [(ngModel)]="submenuitem.estado" (ionChange)="checkboxchangeexcluyente(menu[i].index,j,y)"></ion-checkbox>
               </ion-item>
 
               <ng-template #elseBlock>
                 <ion-item>
                   <ion-label>{{submenuitem.nombre_submenu_items}}</ion-label>
-                  <ion-checkbox [(ngModel)]="submenuitem.estado" (ionChange)="checkboxchangeincluyente()"></ion-checkbox>
+                  <ion-checkbox [(ngModel)]="submenuitem.estado" (ionChange)="checkboxchangeincluyente(menu[i].index,j,y)"></ion-checkbox>
                 </ion-item>
               </ng-template>
 
@@ -60,5 +60,7 @@
 
     </div>
   </ion-item>
+
+   
 
 </ion-content>

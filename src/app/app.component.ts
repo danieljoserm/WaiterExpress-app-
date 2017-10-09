@@ -1,3 +1,4 @@
+import { MenuService } from './../providers/MenuService';
 import { RestaurantePage } from './../pages/restaurante/restaurante';
 import { LoginPage } from './../pages/login/login';
 import { Component, ViewChild } from '@angular/core';
@@ -9,12 +10,15 @@ import { HomePage } from '../pages/home/home';
 import { AlertController } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 import { TranslateService } from '@ngx-translate/core';
+
 @Component({
+    selector: 'app-page',
   templateUrl: 'app.html'
 })
 export class MyApp {
   rootPage: any = LoginPage;
-
+  menu:any;
+  menuseleccionados:any;
 
 
   @ViewChild('mycontent') nav: NavController;
@@ -26,6 +30,7 @@ export class MyApp {
     private alertCtrl: AlertController,
     public toastCtrl: ToastController,
     translate: TranslateService,
+    public menuService:MenuService
   ) {
 
     platform.ready().then(() => {
@@ -53,7 +58,16 @@ export class MyApp {
   menuopen() {
 
   }
-  menuopenright() { }
+  menuopenright() {
+    var list;
+    this.menu=this.menuService.returnmenu();
+    this.menuseleccionados= this.menu.filter(
+      menu=>menu.cantidad>0);
+    
+
+console.log(this.menuseleccionados);
+    //console.log(this.menu);
+   }
 
 
 
@@ -77,6 +91,9 @@ export class MyApp {
     });
     toast.present();
   }
+
+
+
 
 
 

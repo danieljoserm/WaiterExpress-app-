@@ -58,6 +58,9 @@ Restaurantearray : RestauranteClass[]=[];
   ionViewDidLoad() {
 
   }
+  showinfo(){
+    this.alertgeneral("agregar","Cantidad de mesas disponibles, ordenes en cola y tiempo de espera")
+  }
 
 
 
@@ -86,11 +89,44 @@ toastgeneral(message :string){
 
 OpenMenuPage(Restaurante: string ){
 var obj={RestNombre:Restaurante};
-
+//Verificacion de si se encuentra en el restaurante
+this.Numerodemesas();
 this.navCtrl.push(HomePage,obj);
 
 }
 
 
+Numerodemesas() {
+    let prompt = this.alertCtrl.create({
+      title: "Indicar # Mesa",
+      message: "Su numero de mesa se encuentra....FALTA VERIFICACION SI SE ENCUENTRA",
+      inputs: [
+        {
+          name: '# Mesa',
+          placeholder: '# Mesa'
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Listo',
+          handler: data => {
+            console.log('Saved clicked');
+          }
+        }
+      ]
+    });
+    prompt.present();
+  }
+
 
 }
+
+
+
+

@@ -1,5 +1,7 @@
-import { MenuService } from './../../providers/MenuService';
 
+import { MenuService } from './../../providers/MenuService';
+import { PopoverController } from 'ionic-angular';
+import { ToastController } from 'ionic-angular';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 /**
@@ -17,26 +19,43 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class MenuPage {
   menu:any;
 hola: any=true;
+popover : any;
     shownGroup = null;
   constructor(public navCtrl: NavController, public navParams: NavParams,
-  public menuService : MenuService,  
+  public menuService : MenuService, 
+  public popoverCtrl:PopoverController,
+  public toastCtrl: ToastController,
   ) {
   }
 
+  ionViewWillEnter(){
+  
+
+}
+
+
+ionViewWillLeave(){
+  this.toastgeneral("mefui");
+
+}
   ionViewDidLoad() {
 this.menu=this.navParams.get('menu');
-console.log(this.menu);
+//console.log(this.menu);
       
   
   }
 
-  checkboxchangeexcluyente(){
+ 
+  checkboxchangeexcluyente(index:any,submenuindex,submenuitemsindex:any){
 
+this.menuService.Cambiarvaloressubitems(index,submenuindex,submenuitemsindex);
+console.log(index+","+submenuindex+","+submenuitemsindex)
 console.log("excluyente");
   }
 
-  checkboxchangeincluyente(){
-
+  checkboxchangeincluyente(index:any,submenuindex,submenuitemsindex:any){
+this.menuService.Cambiarvaloressubitems(index,submenuindex,submenuitemsindex);
+console.log(index+","+submenuindex+","+submenuitemsindex)
 console.log("incluyente");
   }
 
@@ -69,22 +88,34 @@ return prueba;
       return this.shownGroup === group;
   };
 
-  sumarcantidad(index:any){
+  sumarcantidad(index:any, indexglobal:any){
       
        this.menu[index].cantidad=this.menu[index].cantidad+1;
 
-      this.menuService.cambiarvalorescantidad(this.menu[index].cantidad,index);
+      this.menuService.cambiarvalorescantidad(this.menu[index].cantidad,indexglobal);
       
 
   }
 
-   restarcantidad(index:any){
+   restarcantidad(index:any , indexglobal:any){
       if(this.menu[index].cantidad>0){
         this.menu[index].cantidad=this.menu[index].cantidad-1;
-         this.menuService.cambiarvalorescantidad(this.menu[index].cantidad,index);
+         this.menuService.cambiarvalorescantidad(this.menu[index].cantidad,indexglobal);
    }
+
       
 
   }
 
+  toastgeneral(message :string){
+      let toast = this.toastCtrl.create({
+                    message: message,
+                    duration: 3000
+                  });
+                  toast.present();
 }
+
+
+
+}
+//(ionChange)="checkboxchangeincluyente(i,j,y)"

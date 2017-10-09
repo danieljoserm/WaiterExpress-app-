@@ -13,17 +13,20 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content >
 
   <ion-grid class="card-rest">
     <ion-row >
       <ion-col *ngFor="let Restaurante of Restaurantearray;let i=index" wrap>
-        <ion-card (click)="OpenMenuPage(Restaurante.ID)">
-          <img src="assets/img/rest.jpg" />
+        <ion-card  >
+          <img src="assets/img/rest.jpg" (click)="OpenMenuPage(Restaurante.ID)"/>
           <ion-card-content>
-            <ion-card-title>
+            <ion-card-title id="cardtitle">
               {{Restaurantearray[i].Nombre}}
             </ion-card-title>
+            <button ion-button icon-only id="infobutton" round (click)="showinfo()">
+  <ion-icon name="information-circle"></ion-icon>
+</button>
           </ion-card-content>
         </ion-card>
       </ion-col>

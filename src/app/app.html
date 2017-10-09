@@ -44,12 +44,23 @@
             </ion-title>
             <h3>Desglose </h3>
             <p>Subtotal:5000</p>
+           
         </ion-toolbar>
     </ion-header>
 
 
-    <ion-content>
+    <ion-content class="menu"  >
+    
+        
+        <ion-item  *ngFor="let menuitem of menuseleccionados" >
+        <h1 id="h1">{{menuitem.nombre_producto}}</h1>
+        <h2 id="h2">{{menuitem.cantidad}}</h2>
+        <button ion-button id="button">+</button>   
+       <button ion-button id="button">-</button>  
 
+        </ion-item>
+
+     
 
         
 
