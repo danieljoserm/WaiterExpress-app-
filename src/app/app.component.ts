@@ -58,6 +58,11 @@ export class MyApp {
   menuopen() {
 
   }
+
+
+  ordenarbutton(){
+    this.alertgeneral("agregar","se deben poder encolar varias ordenes si asi lo desea el usuario")
+  }
   menuopenright() {
     var list;
     this.menu=this.menuService.returnmenu();

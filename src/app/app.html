@@ -17,12 +17,11 @@
 
 
         <ion-label>Mis portones</ion-label>
-        <button ion-item menuClose><ion-icon name="add"><span style="padding-left:10px;"></span></ion-icon>Agregar puerta </button>
-        <button ion-item><ion-icon name="trash"><span style="padding-left:10px;"></span></ion-icon>Eliminar puerta </button>
-        <button ion-item><ion-icon name="list"><span style="padding-left:10px;"></span></ion-icon>Seleccionar puerta </button>
-
+        <button ion-item menuClose><ion-icon name="card"><span style="padding-left:10px;"></span></ion-icon>Metodos de pago </button>
         <ion-label>Social</ion-label>
-        <button ion-item><ion-icon name="share"><span style="padding-left:10px;"></span></ion-icon>Compartir Porton </button>
+        <button ion-item><ion-icon name="share"><span style="padding-left:10px;"></span></ion-icon>Compartir orden</button>
+        <button ion-item><ion-icon name="share"><span style="padding-left:10px;"></span></ion-icon>Calificar rest</button>
+        
         <ion-label>Configuracion</ion-label>
         <button ion-item><ion-icon name="cog"><span style="padding-left:10px;"></span></ion-icon>Cambiar contrasena</button>
         <button ion-item><ion-icon name="help"><span style="padding-left:10px;"></span></ion-icon>Cambiar idioma</button>
@@ -44,7 +43,7 @@
             </ion-title>
             <h3>Desglose </h3>
             <p>Subtotal:5000</p>
-           
+           <button ion-button clear id="button" (click)="ordenarbutton()"  >Ordenar</button>
         </ion-toolbar>
     </ion-header>
 
@@ -56,7 +55,10 @@
         <h1 id="h1">{{menuitem.nombre_producto}}</h1>
         <h2 id="h2">{{menuitem.cantidad}}</h2>
         <button ion-button id="button">+</button>   
-       <button ion-button id="button">-</button>  
+       <button ion-button id="button">-</button>
+          <button ion-button icon-only  clear >
+  <ion-icon name="information-circle"></ion-icon>
+</button> 
 
         </ion-item>
 

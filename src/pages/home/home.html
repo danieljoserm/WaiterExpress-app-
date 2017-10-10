@@ -1,20 +1,28 @@
-<ion-header  no-shadow no-border>
+<ion-header  no-shadow no-border class="toolbar">
   <ion-navbar  hideBackButton="true" color='navbarColor' >
      <button ion-button menuToggle="left" start>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>
+    <ion-title id="title">
      Menu                   <!-- Hay que hacerlo variable -->
     </ion-title>
+
+    <div id="paybutton" >
+    <button id="notification-button" ion-button clear (click)="pagarbuton()">
+        <ion-icon name="add-circle">
+          <ion-badge id="notifications-badge" color="danger">10</ion-badge>
+        </ion-icon>              
+    </button>
+</div>
      <button ion-button menuToggle="right" end>
-      <ion-icon name="menu"></ion-icon>
+      <ion-icon name="cart"></ion-icon>
     </button>
   </ion-navbar>
 </ion-header>
 
 <ion-content no-bounce>
 
-<super-tabs   *ngIf="tabbolean"  scrollTabs toolbarColor="light" toolbarBackground="dark" indicatorColor="blue" >
+<super-tabs   *ngIf="tabbolean"  scrollTabs toolbarColor="light" toolbarBackground="dark" indicatorColor="grey" >
   <super-tab  *ngFor="let itemenu of categoriafilter;let i=index" [root]="tabmenu" [rootParams]="categoryfilter(itemenu.categoria)"  title="{{itemenu.categoria}}"></super-tab>
 </super-tabs>
 

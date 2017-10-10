@@ -1,3 +1,37 @@
+.md,.ios{
+
 page-home {
 
+.toolbar{
+
+  #notification-button {    
+            
+            position: relative;
+            width: 42px;
+            top:1px;
+            right: 1px;
+            overflow: visible!important;
+        }
+
+
+   #notifications-badge {
+            background-color: red;
+            position: absolute;
+            top: -3px;
+            right: -3px;
+            border-radius: 100%;
+        }
+
+        #paybutton{
+            float:left;
+        }
+        #title{
+
+            float:left;
+        }
+
+}
+
+
+}
 }

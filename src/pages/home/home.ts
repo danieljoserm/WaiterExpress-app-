@@ -93,6 +93,11 @@ toastgeneral(message :string){
                   toast.present();
 }
 
+pagarbuton(){
+
+  this.alertgeneral("agregar","seleccion de pago, el numero rojo representa las ordenes en cola");
+}
+
 
 //no se usa queda por si acaso pero lo mas probable es que se borre.
 ParseJSONtoMenuClass(menu:any,Menuclass : MenuClass[] )
