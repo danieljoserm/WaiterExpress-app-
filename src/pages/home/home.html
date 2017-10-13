@@ -14,8 +14,10 @@
         </ion-icon>              
     </button>
 </div>
-     <button ion-button menuToggle="right" end>
-      <ion-icon name="cart"></ion-icon>
+     <button ion-button menuToggle="right" id="notification-button" end>
+      <ion-icon name="cart">
+       <ion-badge id="notifications-badge2" color="danger" >{{cartnumber}}</ion-badge>
+       </ion-icon >
     </button>
   </ion-navbar>
 </ion-header>

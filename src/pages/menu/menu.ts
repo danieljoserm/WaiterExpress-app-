@@ -4,6 +4,7 @@ import { PopoverController } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Events}  from 'ionic-angular';
 /**
  * Generated class for the MenuPage page.
  *
@@ -17,6 +18,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'menu.html',
 })
 export class MenuPage {
+   
+
   menu:any;
 hola: any=true;
 popover : any;
@@ -25,6 +28,7 @@ popover : any;
   public menuService : MenuService, 
   public popoverCtrl:PopoverController,
   public toastCtrl: ToastController,
+  public event: Events,
   ) {
   }
 
@@ -93,7 +97,7 @@ return prueba;
        this.menu[index].cantidad=this.menu[index].cantidad+1;
 
       this.menuService.cambiarvalorescantidad(this.menu[index].cantidad,indexglobal);
-      
+   this.event.publish("cambiarvalor",1); 
 
   }
 
@@ -101,6 +105,8 @@ return prueba;
       if(this.menu[index].cantidad>0){
         this.menu[index].cantidad=this.menu[index].cantidad-1;
          this.menuService.cambiarvalorescantidad(this.menu[index].cantidad,indexglobal);
+          this.event.publish("cambiarvalor",-1); 
+      
    }
 
       

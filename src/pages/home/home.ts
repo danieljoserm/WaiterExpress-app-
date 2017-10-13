@@ -1,3 +1,5 @@
+import { PaymentmethodPage } from './../paymentmethod/paymentmethod';
+import { CardlistPage } from './../cardlist/cardlist';
 import { MenuService } from './../../providers/MenuService';
 import { MenuPage } from './../menu/menu';
 import { pruebaclass } from './pruebaclass';
@@ -8,7 +10,7 @@ import { Http } from '@angular/http';
 import { LoginPage } from './../login/login';
 import { RestaurantePage } from './../restaurante/restaurante';
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, Events } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 import {deserialize} from "serializer.ts/Serializer";
@@ -22,7 +24,7 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
 })
 export class HomePage {
 
-
+cartnumber : any =0;
 tabmenu : any = MenuPage;
 menuany : any; 
 categoriafilter:any;
@@ -35,7 +37,8 @@ tabbolean: boolean=false;
     public navParams :NavParams,
     public http :Http,
     public superTabsCtrl: SuperTabsController,
-    public menuService : MenuService
+    public menuService : MenuService,
+    public event : Events
   ) { 
 
  let DataLocal = this.http.get('assets/fakeinfo/menu.json').map(res => res.json()).subscribe(
@@ -62,12 +65,27 @@ tabbolean: boolean=false;
     
     );
 
+    this.event.subscribe("cambiarvalor",(valor)=>{
+
+this.cartnumber=this.cartnumber+valor;
+
+    })
+
     }
 
   ionViewDidLoad(){
 this.superTabsCtrl.enableTabSwipe(this.tabmenu,true);
 
  
+  }
+
+  sumarcart(){
+  this.cartnumber++;  
+
+  }
+  Restarcart(){
+this.cartnumber--;  
+
   }
 
 
@@ -95,6 +113,7 @@ toastgeneral(message :string){
 
 pagarbuton(){
 
+  this.navCtrl.push(PaymentmethodPage);
   this.alertgeneral("agregar","seleccion de pago, el numero rojo representa las ordenes en cola");
 }
 

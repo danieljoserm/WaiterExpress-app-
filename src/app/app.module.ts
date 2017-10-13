@@ -1,3 +1,5 @@
+import { PaymentmethodPage } from './../pages/paymentmethod/paymentmethod';
+import { CardlistPage } from './../pages/cardlist/cardlist';
 
 import { MenuService } from './../providers/MenuService';
 import { MenuPage } from './../pages/menu/menu';
@@ -25,7 +27,7 @@ export function createTranslateLoader(http: Http) {
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,RestaurantePage,LoginPage,RegisterPage,MenuPage
+    HomePage,RestaurantePage,LoginPage,RegisterPage,MenuPage,CardlistPage,PaymentmethodPage
   ],
   imports: [
 
@@ -46,7 +48,7 @@ export function createTranslateLoader(http: Http) {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,RestaurantePage,LoginPage,RegisterPage,MenuPage
+    HomePage,RestaurantePage,LoginPage,RegisterPage,MenuPage,CardlistPage,PaymentmethodPage
   ],
   providers: [
     MenuService,
