@@ -79,6 +79,15 @@ this.superTabsCtrl.enableTabSwipe(this.tabmenu,true);
  
   }
 
+  booleancartnumber(){
+    if(this.cartnumber>0){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+
   sumarcart(){
   this.cartnumber++;  
 

@@ -18,7 +18,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SuperTabsModule } from 'ionic2-super-tabs';
-
+import { RequestOptions } from '@angular/http';
 //import {TranslateLoader} from '@ngx-translate/http-loader';
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');

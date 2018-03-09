@@ -33,14 +33,14 @@ Restaurantearray : RestauranteClass[]=[];
     
     ) {
 
-    let DataLocal = this.http.get('assets/fakeinfo/rest.json').map(res => res.json()).subscribe(
+    let DataLocal = this.http.get("http://localhost:8080/retrieve_restaurants.php").map(res => res.json()).subscribe(
       data=>{
-        
+      console.log(data);
        for (let numero = 0; numero < Object.keys(data).length; numero++)  {
-        this.Restaurantearray.push(new RestauranteClass(data[numero].Nombre,"",data[numero].Imagen,data[numero].id));
+        this.Restaurantearray.push(new RestauranteClass(data[numero].nombre,"","data[numero].Imagen",data[numero].id));
         }   
     //console.log(data[0].Nombre);
-    this.toastgeneral(this.Restaurantearray[3].Nombre);
+  //  this.toastgeneral(this.Restaurantearray[3].Nombre);
 
       
       },

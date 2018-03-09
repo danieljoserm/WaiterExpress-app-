@@ -10,13 +10,13 @@
     <div id="paybutton" >
     <button id="notification-button" ion-button clear (click)="pagarbuton()">
         <ion-icon name="add-circle">
-          <ion-badge id="notifications-badge" color="danger">10</ion-badge>
+           <!-- <ion-badge id="notifications-badge" color="danger">10</ion-badge>-->
         </ion-icon>              
     </button>
 </div>
      <button ion-button menuToggle="right" id="notification-button" end>
       <ion-icon name="cart">
-       <ion-badge id="notifications-badge2" color="danger" >{{cartnumber}}</ion-badge>
+       <ion-badge *ngIf=booleancartnumber() id="notifications-badge2" color="danger" >{{cartnumber}}</ion-badge>
        </ion-icon >
     </button>
   </ion-navbar>

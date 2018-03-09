@@ -3,9 +3,9 @@
 
 
 
-{"id_producto":"2","categoria":"Platos Fuertes","nombre_producto":"pasta Alfredo","precio":"4500","submenu":
+{"id_producto":"2","categoria":"Platos","nombre_producto":"pasta Alfredo","precio":"4500","submenu":
 [{"submenu_categoria":"carne","submenu_tipo":"1","submenu_items":[{"nombre_submenu_items":"pollo"},{"nombre_submenu_items":"carne"}]},{"submenu_categoria":"ensalada","submenu_tipo":"0","submenu_items":[{"nombre_submenu_items":"tomate"},{"nombre_submenu_items":"lechuga"},{"nombre_submenu_items":"zanahoria"}]}]
 },
 
 {"id_producto":"3","categoria":"Bebidas","nombre_producto":"Guanabana","precio":"2000","submenu":""},
-{"id_producto":"4","categoria":"Bebidas","nombre_producto":"Malteada","precio":"2000","submenu":""}]
+{"id_producto":"4","categoria":"Bebidas","nombre_producto":"Malteada","precio":"2000","submenu":""},{"id_producto":"4","categoria":"Otros","nombre_producto":"Malteada","precio":"2000","submenu":""}]
