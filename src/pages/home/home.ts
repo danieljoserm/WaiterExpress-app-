@@ -41,21 +41,26 @@ tabbolean: boolean=false;
     public event : Events
   ) { 
 
- let DataLocal = this.http.get('assets/fakeinfo/menu.json').map(res => res.json()).subscribe(
+let id= navParams.get('RestNombre')
+console.log(id);
+
+var restaurantnumber={restaurant_name:id};
+
+ let DataLocal = this.http.post("http://localhost:8080/retrieve_menu.php",JSON.stringify(restaurantnumber)).map(res => res.json()).subscribe(
    
 
   data=>{
 
-
-    this.menuany=data;
-    this.categoriafilter=this.Rmduplicateitems();
-  this.menuany=this.Addstatetosubitems(this.menuany);
-  this.menuService.setMenuEntrada(this.menuany);
-
-
+console.log(data);
+  //  this.menuany=data;
+  //  this.categoriafilter=this.Rmduplicateitems();
+  //this.menuany=this.Addstatetosubitems(this.menuany);
+  //this.menuService.setMenuEntrada(this.menuany);
 
 
-    this.tabbolean=true;
+
+
+  //  this.tabbolean=true;
       },
       err=>{
     console.log("no funciono");

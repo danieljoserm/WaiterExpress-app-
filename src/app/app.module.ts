@@ -1,3 +1,4 @@
+import { RestService } from './../providers/RestService';
 import { PaymentmethodPage } from './../pages/paymentmethod/paymentmethod';
 import { CardlistPage } from './../pages/cardlist/cardlist';
 
@@ -19,6 +20,7 @@ import { HomePage } from '../pages/home/home';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SuperTabsModule } from 'ionic2-super-tabs';
 import { RequestOptions } from '@angular/http';
+
 //import {TranslateLoader} from '@ngx-translate/http-loader';
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -51,6 +53,7 @@ export function createTranslateLoader(http: Http) {
     HomePage,RestaurantePage,LoginPage,RegisterPage,MenuPage,CardlistPage,PaymentmethodPage
   ],
   providers: [
+    RestService ,
     MenuService,
     StatusBar,
     SplashScreen,

@@ -1,3 +1,4 @@
+import { RestService } from './../../providers/RestService';
 import { HomePage } from './../home/home';
 import { RestauranteClass } from './RestauranteClass';
 import { Http } from '@angular/http';
@@ -29,6 +30,7 @@ Restaurantearray : RestauranteClass[]=[];
      private http:Http,
      public toastCtrl: ToastController,
      private alertCtrl: AlertController,
+     public RestService : RestService,
     
     
     ) {
@@ -36,6 +38,7 @@ Restaurantearray : RestauranteClass[]=[];
     let DataLocal = this.http.get("http://localhost:8080/retrieve_restaurants.php").map(res => res.json()).subscribe(
       data=>{
       console.log(data);
+      this.RestService.initializerestaurant(data);
        for (let numero = 0; numero < Object.keys(data).length; numero++)  {
         this.Restaurantearray.push(new RestauranteClass(data[numero].nombre,"","data[numero].Imagen",data[numero].id));
         }   
@@ -89,6 +92,7 @@ toastgeneral(message :string){
 
 OpenMenuPage(Restaurante: string ){
 var obj={RestNombre:Restaurante};
+
 //Verificacion de si se encuentra en el restaurante
 this.Numerodemesas();
 this.navCtrl.push(HomePage,obj);
