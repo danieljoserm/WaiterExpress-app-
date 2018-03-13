@@ -44,7 +44,8 @@ ionViewWillLeave(){
 }
   ionViewDidLoad() {
 this.menu=this.navParams.get('menu');
-//console.log(this.menu);
+console.log("menurecibir");
+console.log(this.menu);
       
   
   }

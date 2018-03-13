@@ -25,7 +25,7 @@
 <ion-content no-bounce>
 
 <super-tabs   *ngIf="tabbolean"  scrollTabs toolbarColor="light" toolbarBackground="dark" indicatorColor="grey" >
-  <super-tab  *ngFor="let itemenu of categoriafilter;let i=index" [root]="tabmenu" [rootParams]="categoryfilter(itemenu.categoria)"  title="{{itemenu.categoria}}"></super-tab>
+  <super-tab  *ngFor="let itemenu of categoriafilter;let i=index" [root]="tabmenu" [rootParams]="categoryfilter(itemenu.nombrecat)"  title="{{itemenu.nombrecat}}"></super-tab>
 </super-tabs>
 
   

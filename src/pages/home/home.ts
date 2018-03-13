@@ -51,16 +51,20 @@ var restaurantnumber={restaurant_name:id};
 
   data=>{
 
-console.log(data);
-  //  this.menuany=data;
-  //  this.categoriafilter=this.Rmduplicateitems();
-  //this.menuany=this.Addstatetosubitems(this.menuany);
-  //this.menuService.setMenuEntrada(this.menuany);
+//console.log(data);
+   this.menuany=data;
+   
+   this.categoriafilter=this.Rmduplicateitems();
+ //
+  this.menuany= this.addsubmenuwhennull(this.menuany);
+
+  this.menuany=this.Addstatetosubitems(data);
+  this.menuService.setMenuEntrada(this.menuany);
 
 
+  this.tabbolean=true;
+  console.log(this.menuany);
 
-
-  //  this.tabbolean=true;
       },
       err=>{
     console.log("no funciono");
@@ -83,6 +87,21 @@ this.superTabsCtrl.enableTabSwipe(this.tabmenu,true);
 
  
   }
+
+
+  addsubmenuwhennull(menu:any){
+    
+      for (let numero = 0; numero < Object.keys(menu).length; numero++) {
+       
+        menu[numero].cantidad=0;
+        menu[numero].index=numero;
+          
+      menu[numero].submenu="";
+      }
+    
+    
+    
+    }
 
   booleancartnumber(){
     if(this.cartnumber>0){
@@ -133,43 +152,20 @@ pagarbuton(){
 
 
 //no se usa queda por si acaso pero lo mas probable es que se borre.
-ParseJSONtoMenuClass(menu:any,Menuclass : MenuClass[] )
-{  
-    for (let numero = 0; numero < Object.keys(menu).length; numero++)  {
-  
 
-      this.Menu.push(new MenuClass(menu[numero].id_producto,menu[numero].categoria,menu[numero].nombre_producto,menu[numero].precio))
-      if(menu[numero].submenu!=""){
 
-        for(let numero1 = 0; numero1 < Object.keys(menu[numero].submenu).length; numero1++){
 
-           
 
-          this.Menu[numero].submenu.push(new SubMenuClass(menu[numero].submenu[numero1].submenu_categoria,menu[numero].submenu[numero1].submenu_tipo));
 
-            for(let numero2 = 0; numero2 < Object.keys(menu[numero].submenu[numero1].submenu_items).length; numero2++){
 
-              this.Menu[numero].submenu[numero1].submenu_items.push(new SubMenuItemsClass(menu[numero].submenu[numero1].submenu_items[numero2].nombre_submenu_items,false));
 
-            }
-        
-        
-          }
 
-      }
-   
-      
-
-    }
-
-}
 
 Addstatetosubitems(menu:any)
 {  
     for (let numero = 0; numero < Object.keys(menu).length; numero++)  {
   
-      menu[numero].cantidad=0;
-      menu[numero].index=numero;
+      
     
       if(menu[numero].submenu!=""){
 
@@ -201,7 +197,7 @@ categoryfilter(category : string){
 var menuprobando;
 
 menuprobando=this.menuany.filter(function(menu){
-return menu.categoria==category;
+return menu.nombrecat==category;
 
 
 });
@@ -212,7 +208,7 @@ return {menu:menuprobando};
 
 Rmduplicateitems(){
 var list;
-list = this.menuany.filter((item,index,self)=> self.findIndex((t)=>{return t.categoria==item.categoria})== index)
+list = this.menuany.filter((item,index,self)=> self.findIndex((t)=>{return t.nombrecat==item.nombrecat})== index)
 
 return list;
 
