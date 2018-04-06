@@ -53,11 +53,11 @@
     
         
         <ion-item  *ngFor="let menuitem of menuseleccionados" >
-        <h1 id="h1">{{menuitem.nombre_producto}}</h1>
+        <h1 id="h1">{{menuitem.nombre}}</h1>
         <h2 id="h2">{{menuitem.cantidad}}</h2>
-        <button ion-button id="button">+</button>   
-       <button ion-button id="button">-</button>
-          <button ion-button icon-only  clear >
+        <button ion-button id="button" (click)="aumentarcantidad(menuitem.cantidad,menuitem.id)">+</button>   
+       <button ion-button id="button" (click)="disminuircantidad(menuitem.cantidad,menuitem.id)">-</button>
+          <button ion-button icon-only id="infobutton" clear >
   <ion-icon name="information-circle"></ion-icon>
 </button> 
 

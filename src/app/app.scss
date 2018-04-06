@@ -8,9 +8,17 @@ float:left;
 }
 #h1{
 padding-left:5px;
-font-size: 20px;
-float:left;
+font-size: 15px;
+width:200px;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+#infobutton{
+padding-left:100px;    
+padding-top:10px;
+float:right;
 
+}
 
 }
 #h2{

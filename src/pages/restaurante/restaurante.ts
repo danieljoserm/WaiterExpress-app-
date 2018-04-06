@@ -92,7 +92,7 @@ toastgeneral(message :string){
 
 OpenMenuPage(Restaurante: string ){
 var obj={RestNombre:Restaurante};
-
+this.RestService.ChosenRestaurant(Restaurante);
 //Verificacion de si se encuentra en el restaurante
 this.Numerodemesas();
 this.navCtrl.push(HomePage,obj);

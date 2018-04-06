@@ -13,16 +13,19 @@
     <button ion-button id="butonmenos" (click)="restarcantidad(i,menu[i].index)">-</button>
     <ion-avatar id="avatar">
       <img src="assets/img/rest.jpg">
+      <h1 id="cantidad">{{menuitem.cantidad}}</h1>
     </ion-avatar>
-
+   
     <div id="div">
-      <h2 id="h2">
-        {{menuitem.nombre}}
-      </h2>
-      <p id="p">{{menuitem.precio}}</p>
-      <button ion-button (click)="toggleGroup(i)" id="butonview" *ngIf="tienesubmenu(menuitem)">ver detalles</button>
-    </div>
-    <h1 id="cantidad">{{menuitem.cantidad}}</h1>
+        <p id="p">{{menuitem.precio}}</p>
+      <ion-item text-wrap id="text">
+      {{menuitem.nombre}}
+      </ion-item>
+     
+          <button ion-button (click)="toggleGroup(i)" id="butonview" *ngIf="tienesubmenu(menuitem)">ver detalles</button>
+         
+        </div>
+   
 
     <button ion-button id="butonmas" (click)="sumarcantidad(i,menu[i].index)">+</button>
 
@@ -57,12 +60,12 @@
       </div>
 
       <ion-item>
-    <ion-input  placeholder="Indicacion extra"></ion-input>
-  </ion-item>
+        <ion-input placeholder="Indicacion extra"></ion-input>
+      </ion-item>
 
     </div>
   </ion-item>
 
-   
+
 
 </ion-content>

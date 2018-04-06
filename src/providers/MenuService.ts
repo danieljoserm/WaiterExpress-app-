@@ -37,6 +37,21 @@ console.log(this.menu);
 
 }
 
+cambiarvaloresconidcantidad(cantidad:any,id:any){
+
+    for (let numero = 0; numero < Object.keys(this.menu).length; numero++) {
+
+        if(this.menu[numero].id==id){
+            this.menu[numero].cantidad=cantidad;
+        console.log(this.menu);
+        }
+
+
+
+    }
+}
+
+
 cambiarvalorescantidad(cantidad:any,index:any){
 
 this.menu[index].cantidad=cantidad;
