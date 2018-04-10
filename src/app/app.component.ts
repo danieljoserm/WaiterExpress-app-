@@ -21,7 +21,8 @@ export class MyApp {
   rootPage: any = LoginPage;
   menu:any;
   menuseleccionados:any;
-  order:any;
+  order:order;
+  request:request[];
 
   
 
@@ -83,38 +84,37 @@ export class MyApp {
 
   ordenarbutton(){
 
-    var orden;
+ 
+     this.request=[];
+   
+     for (let numero = 0; numero < Object.keys(this.menuseleccionados).length; numero++) {
+      console.log(Object.keys(this.menuseleccionados).length); 
+ 
+      this.request[numero]= new request(this.menuseleccionados[numero].id,this.menuseleccionados[numero].cantidad); 
 
-    orden=this.menuseleccionados;
-    orden.id_usuario=1;
-    orden.id_restaurante=this.RestService.GetChosenRestaurant();
-    orden.id_productos=[{"id":"0","cantidad":"0"}];
-    for (let numero = 0; numero < Object.keys(this.menuseleccionados).length; numero++) {
+     }
+
+     this.order=new order(1,this.RestService.GetChosenRestaurant(),this.request);
+     let DataLocal = this.http.post("http://localhost:8080/send_order.php",JSON.stringify(this.order)).map(res => res.json()).subscribe(
       
-      orden.id_productos[numero].id=this.menuseleccionados[numero].id;
-      orden.id_productos[numero].cantidad=this.menuseleccionados[numero].cantidad;
-    }
-
-    // let DataLocal = this.http.post("http://localhost:8080/send_order.php",JSON.stringify(this.orden)).map(res => res.json()).subscribe(
-      
    
-    //  data=>{
+      data=>{
    
-    //       console.log(data);
+           console.log(data);
 
    
-    //      },
-    //      err=>{
-    //    console.log("no funciono");
+          },
+          err=>{
+        console.log("no funciono");
    
-    //      }
+          }
        
        
-    //    );
+        );
 
 
     console.log("vea el json");
-    console.log(JSON.stringify(orden));
+    console.log(JSON.stringify(this.order));
     this.alertgeneral("agregar","se deben poder encolar varias ordenes si asi lo desea el usuario")
   }
   menuopenright() {
@@ -161,13 +161,26 @@ console.log(this.menuseleccionados);
 
 }
 
-interface order{
 
-id_usuario:any;
-id_restaurante:any;
+export class order{
 
-id:any
-cantidad:any
-//id_productos:any=[{id,cantidad}];
+constructor(
+
+  public id_usuario:any,
+  public id_restaurante:any,
+  public id_productos:request[]=[],
+
+){}
+
+
 }
 
+
+ export class request{
+  
+  constructor(
+    public id:number,
+    public cantidad:number,
+  ){}
+
+}
