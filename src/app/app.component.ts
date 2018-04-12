@@ -88,7 +88,7 @@ export class MyApp {
      this.request=[];
    
      for (let numero = 0; numero < Object.keys(this.menuseleccionados).length; numero++) {
-      console.log(Object.keys(this.menuseleccionados).length); 
+    //  console.log(Object.keys(this.menuseleccionados).length); 
  
       this.request[numero]= new request(this.menuseleccionados[numero].id,this.menuseleccionados[numero].cantidad); 
 
@@ -113,8 +113,8 @@ export class MyApp {
         );
 
 
-    console.log("vea el json");
-    console.log(JSON.stringify(this.order));
+   // console.log("vea el json");
+   // console.log(JSON.stringify(this.order));
     this.alertgeneral("agregar","se deben poder encolar varias ordenes si asi lo desea el usuario")
   }
   menuopenright() {
