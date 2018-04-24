@@ -12,7 +12,7 @@ import {Events}  from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+//@IonicPage()
 @Component({
   selector: 'page-menu',
   templateUrl: 'menu.html',

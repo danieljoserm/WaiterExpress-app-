@@ -1,3 +1,4 @@
+
 import { RestService } from './../providers/RestService';
 import { PaymentmethodPage } from './../pages/paymentmethod/paymentmethod';
 import { CardlistPage } from './../pages/cardlist/cardlist';
@@ -7,7 +8,7 @@ import { MenuPage } from './../pages/menu/menu';
 import { RegisterPage } from './../pages/register/register';
 import { LoginPage } from './../pages/login/login';
 import { RestaurantePage } from './../pages/restaurante/restaurante';
-import { SharedModule } from './shared/SharedModule';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -34,9 +35,9 @@ export function createTranslateLoader(http: Http) {
   imports: [
 
     SuperTabsModule.forRoot(),
-    SharedModule,
+ 
     HttpModule,
-    BrowserModule,
+        BrowserModule,
     IonicModule.forRoot(MyApp),
      TranslateModule.forRoot({
       loader: {

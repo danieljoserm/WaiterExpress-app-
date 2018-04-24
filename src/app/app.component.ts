@@ -95,7 +95,7 @@ export class MyApp {
      }
 
      this.order=new order(1,this.RestService.GetChosenRestaurant(),this.request);
-     let DataLocal = this.http.post("http://localhost:8080/send_order.php",JSON.stringify(this.order)).map(res => res.json()).subscribe(
+     let DataLocal = this.http.post("http://35.202.49.203/backend/send_order.php",JSON.stringify(this.order)).map(res => res.json()).subscribe(
       
    
       data=>{

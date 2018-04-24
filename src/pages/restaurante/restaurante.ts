@@ -14,7 +14,7 @@ import 'rxjs/add/operator/map';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+//@IonicPage()
 @Component({
   selector: 'page-restaurante',
   templateUrl: 'restaurante.html',
@@ -35,7 +35,7 @@ Restaurantearray : RestauranteClass[]=[];
     
     ) {
 
-    let DataLocal = this.http.get("http://localhost:8080/retrieve_restaurants.php").map(res => res.json()).subscribe(
+    let DataLocal = this.http.get("http://35.202.49.203/backend/retrieve_restaurants.php").map(res => res.json()).subscribe(
       data=>{
       console.log(data);
       this.RestService.initializerestaurant(data);

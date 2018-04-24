@@ -46,7 +46,7 @@ console.log(id);
 
 var restaurantnumber={restaurant_name:id};
 
- let DataLocal = this.http.post("http://localhost:8080/retrieve_menu.php",JSON.stringify(restaurantnumber)).map(res => res.json()).subscribe(
+ let DataLocal = this.http.post("http://35.202.49.203/backend/retrieve_menu.php",JSON.stringify(restaurantnumber)).map(res => res.json()).subscribe(
    
 
   data=>{
