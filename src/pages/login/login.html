@@ -4,33 +4,33 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<ion-header >
 
-  <ion-navbar>
+  <ion-navbar color="navbarColor">
     <ion-title>LoginPage</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="content">
 
 <ion-list>
 
-  <ion-item>
+  <ion-item class="inputtext"> 
     <ion-label floating>{{'LOGINPAGE.USERNAMELABEL'|translate}}</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" ></ion-input>
   </ion-item>
 
-  <ion-item>
+  <ion-item class="inputtext">
     <ion-label floating>{{'LOGINPAGE.PASSWORDLABEL'|translate}}</ion-label>
-    <ion-input type="password"></ion-input>
+    <ion-input type="password" ></ion-input>
   </ion-item>
 
 
 </ion-list>
 
- <button ion-button block (click)="OpenRestaurantePage()" >{{'LOGINPAGE.LOGINLABEL'|translate}}</button>
- <button ion-button block (click)="OpenRegisterPage()" >{{'LOGINPAGE.REGISTERLABEL'|translate}}</button>
+ <button ion-button block (click)="OpenRestaurantePage()" color="navbarColor" >{{'LOGINPAGE.LOGINLABEL'|translate}}</button>
+ <button ion-button block (click)="OpenRegisterPage()"color="navbarColor" >{{'LOGINPAGE.REGISTERLABEL'|translate}}</button>
 
 </ion-content>

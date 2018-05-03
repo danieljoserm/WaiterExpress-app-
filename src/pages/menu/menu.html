@@ -10,7 +10,7 @@
 <ion-content no-padding>
   <ion-item *ngFor="let menuitem of menu; let i=index" class="andrea" padding>
 
-    <button ion-button id="butonmenos" (click)="restarcantidad(i,menu[i].index)">-</button>
+    <button ion-button outline id="butonmenos" (click)="restarcantidad(i,menu[i].index)">-</button>
     <ion-avatar id="avatar">
       <img src="assets/img/rest.jpg">
       <h1 id="cantidad">{{menuitem.cantidad}}</h1>
@@ -27,7 +27,7 @@
         </div>
    
 
-    <button ion-button id="butonmas" (click)="sumarcantidad(i,menu[i].index)">+</button>
+    <button ion-button outline  id="butonmas" (click)="sumarcantidad(i,menu[i].index)">+</button>
 
 
     <div id="extender" *ngIf="isGroupShown(i)">

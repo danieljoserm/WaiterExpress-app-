@@ -1,3 +1,38 @@
+.md,.ios{
+
 page-login {
 
+    $label-md-text-color-focused:white;
+    $label-wp-text-color-focused:white;
+
+    .item-md.item-input .item-inner {
+        border-bottom-color: white !important;
+      }
+      
+    
+    .toolbar{
+        background-color: blue;
+
+    }
+
+    .content{
+     
+
+       background-image: url('/assets/img/prueba.jpg');
+
+
+
+    }
+    .inputtext{
+        color:white;
+        background-color:rgba(0, 0, 0, 0.5);
+
+
+
+
+    }
+
+
+  
+}
 }

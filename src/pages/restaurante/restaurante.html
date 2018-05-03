@@ -13,12 +13,12 @@
 </ion-header>
 
 
-<ion-content >
+<ion-content class="content" >
 
   <ion-grid class="card-rest">
     <ion-row >
       <ion-col *ngFor="let Restaurante of Restaurantearray;let i=index" wrap>
-        <ion-card  >
+        <ion-card color="navbarColor"  >
           <img src="assets/img/rest.jpg" (click)="OpenMenuPage(Restaurante.ID)"/>
           <ion-card-content>
             <ion-card-title id="cardtitle">
