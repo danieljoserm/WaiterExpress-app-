@@ -37,7 +37,7 @@
           <ion-row>
             <ion-col *ngFor="let submenuitem of menu[i].submenu[j].submenu_items;let y=index" wrap>
               <ion-item *ngIf="excluyenteoincluyente(menuitem.submenu_tipo);else elseBlock">
-                <ion-label>{{submenuitem.nombre_submenu_items}}</ion-label>
+                <ion-label  >{{submenuitem.nombre_submenu_items}}</ion-label>
                 <ion-checkbox [(ngModel)]="submenuitem.estado" (ionChange)="checkboxchangeexcluyente(menu[i].index,j,y)"></ion-checkbox>
               </ion-item>
 

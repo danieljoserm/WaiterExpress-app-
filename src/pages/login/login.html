@@ -15,20 +15,20 @@
 
 <ion-content padding class="content">
 
-<ion-list>
+<ion-list class="list">
 
   <ion-item class="inputtext"> 
     <ion-label floating>{{'LOGINPAGE.USERNAMELABEL'|translate}}</ion-label>
-    <ion-input type="text" ></ion-input>
+    <ion-input type="text" class="linemargin" ></ion-input>
   </ion-item>
 
   <ion-item class="inputtext">
     <ion-label floating>{{'LOGINPAGE.PASSWORDLABEL'|translate}}</ion-label>
-    <ion-input type="password" ></ion-input>
+    <ion-input type="password" class="linemargin" ></ion-input>
   </ion-item>
 
 
-</ion-list>
+</ion-list >
 
  <button ion-button block (click)="OpenRestaurantePage()" color="navbarColor" >{{'LOGINPAGE.LOGINLABEL'|translate}}</button>
  <button ion-button block (click)="OpenRegisterPage()"color="navbarColor" >{{'LOGINPAGE.REGISTERLABEL'|translate}}</button>

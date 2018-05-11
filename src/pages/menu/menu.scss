@@ -12,6 +12,7 @@ page-menu {
 }
 
 #text{
+  white-space: normal;
  padding-top: 0px;
   width: 110px;
 
@@ -79,7 +80,9 @@ margin-left:15px;
 border-top: solid;
 border-top-color: #222
 }
-
+.textonombre{
+  text-align: right
+}
 
 ion-item{
 

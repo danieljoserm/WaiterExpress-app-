@@ -24,14 +24,27 @@ page-login {
 
     }
     .inputtext{
-        color:white;
-        background-color:rgba(0, 0, 0, 0.5);
+
+    
+       // color:white;
+        background-color:rgba(0, 0, 0, 0);
 
 
 
 
     }
+    .linemargin{
+        padding-left: 10px;
+        padding-bottom: 5px;
+        color:white;
+     
 
+    }
+
+    .list{
+        background-color:rgba(0, 0, 0, 0.5);
+        padding-bottom: 20px;
+    }
 
   
 }
