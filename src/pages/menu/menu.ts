@@ -39,7 +39,7 @@ popover : any;
 
 
 ionViewWillLeave(){
-  this.toastgeneral("mefui");
+ // this.toastgeneral("mefui");
 
 }
   ionViewDidLoad() {

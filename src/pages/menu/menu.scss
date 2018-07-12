@@ -2,10 +2,19 @@
 
 page-menu {
 
+.imagen{
+  //height:50px;
+  width:40px;
+  float:left;
+}
+.botonesdiv{
+
+  float:right;
+}
 .andrea{
-
+//height: 200px;
 #p{
-
+  float: left;
   padding-bottom: 0px;
   padding-left: 14px;
 
@@ -14,9 +23,9 @@ page-menu {
 #text{
   white-space: normal;
  padding-top: 0px;
-  width: 110px;
-
-  word-wrap: break-word;
+  width: 150px;
+//  text-align: justify;
+//  word-wrap: break-word;
 }
 
 #ionlabel{
@@ -25,11 +34,13 @@ page-menu {
 }
  
 #butonmenos{
-width: 10%;
-height: 120px;
-float:left;
+width: 5%;
+height: 60px;
+
+//float:left;
 
 }
+
 
 #avatar{
    float:left;
@@ -39,11 +50,12 @@ float:left;
 }
 
 #div{
-  padding-right:17px;
-  padding-top: 10px;
+   //height:50px; 
+  padding-right:5px;
+  padding-top: 5px;
 padding-left:5px;
 float:left;
-padding-bottom: 15px;
+padding-bottom: 5px;
 
 }
 #h2{
@@ -55,18 +67,19 @@ padding-bottom: 15px;
 }
 
 #cantidad{
-  padding-top: 15px;
+ // padding-top: 15px;
   padding-left:10px;
-float:left;
+  padding-right: 20px;
+float:right;
 width: 5%;
 height: 60px;
 }
 #butonmas{
-float:left;
-width: 10%;
-height: 120px;
+//float:right;
+width: 5%;
+height: 60px;
 margin-right:1px;
-margin-left:15px;
+margin-left:1px;
 }
 #submenutitulo{
   padding-top: 5px;
