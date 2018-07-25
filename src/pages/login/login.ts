@@ -1,7 +1,7 @@
 import { HomePage } from './../home/home';
 import { RestaurantePage } from './../restaurante/restaurante';
 import { RegisterPage } from './../register/register';
-
+import {FormBuilder,FormGroup} from '@angular/forms';
 
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -22,14 +22,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LoginPage {
 
- 
+ credentialsForm : FormGroup;
     
      
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
+    private formBuilder : FormBuilder,
   
      ) {
+
+      this.credentialsForm = this.formBuilder.group({
+        email:[''],
+        password:['']
+      })
+
+
       
 
   }

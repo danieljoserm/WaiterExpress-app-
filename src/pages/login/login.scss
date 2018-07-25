@@ -2,6 +2,18 @@
 
 page-login {
 
+
+
+
+
+    ion-content{
+        @include linear-gradient(left,$green-and-blue);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+
+    }
+
     $label-md-text-color-focused:white;
     $label-wp-text-color-focused:white;
 
@@ -15,14 +27,14 @@ page-login {
 
     }
 
-    .content{
+  //  .content{
      
 
-       background-image: url('../assets/img/prueba.jpg');
+    //   background-image: url('../assets/img/prueba.jpg');
 
 
 
-    }
+   // }
     .inputtext{
 
     

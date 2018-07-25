@@ -21,6 +21,7 @@ import { HomePage } from '../pages/home/home';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SuperTabsModule } from 'ionic2-super-tabs';
 import { RequestOptions } from '@angular/http';
+import { GlobalProvider } from '../providers/global/global_Variables';
 
 //import {TranslateLoader} from '@ngx-translate/http-loader';
 export function createTranslateLoader(http: Http) {
@@ -58,7 +59,8 @@ export function createTranslateLoader(http: Http) {
     MenuService,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    GlobalProvider
   ]
 })
 export class AppModule {}

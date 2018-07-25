@@ -1,3 +1,4 @@
+import { GlobalProvider } from './../../providers/global/global_Variables';
 import { PaymentmethodPage } from './../paymentmethod/paymentmethod';
 import { CardlistPage } from './../cardlist/cardlist';
 import { MenuService } from './../../providers/MenuService';
@@ -38,7 +39,8 @@ tabbolean: boolean=false;
     public http :Http,
     public superTabsCtrl: SuperTabsController,
     public menuService : MenuService,
-    public event : Events
+    public event : Events,
+    public GlobalProvider : GlobalProvider
   ) { 
 
 let id= navParams.get('RestNombre')
@@ -46,22 +48,17 @@ console.log(id);
 
 var restaurantnumber={restaurant_name:id};
 
- let DataLocal = this.http.post("http://35.202.49.203/backend/retrieve_menu.php",JSON.stringify(restaurantnumber)).map(res => res.json()).subscribe(
+ let DataLocal = this.http.post(this.GlobalProvider.GetServerUrl()+ "/retrieve_menu.php",JSON.stringify(restaurantnumber)).map(res => res.json()).subscribe(
    
 
   data=>{
 
 //console.log(data);
-   this.menuany=data;
-   
-   this.categoriafilter=this.Rmduplicateitems();
- //
+  this.menuany=data;
+  this.categoriafilter=this.Rmduplicateitems();
   this.menuany= this.addsubmenuwhennull(this.menuany);
-
   this.menuany=this.Addstatetosubitems(data);
   this.menuService.setMenuEntrada(this.menuany);
-
-
   this.tabbolean=true;
   console.log(this.menuany);
 
@@ -98,8 +95,6 @@ this.superTabsCtrl.enableTabSwipe(this.tabmenu,true);
           
       menu[numero].submenu="";
       }
-    
-    
     
     }
 
@@ -149,17 +144,7 @@ pagarbuton(){
   this.navCtrl.push(PaymentmethodPage);
   this.alertgeneral("agregar","seleccion de pago, el numero rojo representa las ordenes en cola");
 }
-
-
 //no se usa queda por si acaso pero lo mas probable es que se borre.
-
-
-
-
-
-
-
-
 
 Addstatetosubitems(menu:any)
 {  
@@ -180,26 +165,18 @@ Addstatetosubitems(menu:any)
             menu[numero].submenu[numero1].submenu_items[numero2].estado=false;
 
             }
-        
-        
+               
           }
-
       }
-   
-      
-
+         
     }
     return menu;
 
 }
-
 categoryfilter(category : string){
 var menuprobando;
-
 menuprobando=this.menuany.filter(function(menu){
 return menu.nombrecat==category;
-
-
 });
 
 return {menu:menuprobando};
@@ -209,16 +186,6 @@ return {menu:menuprobando};
 Rmduplicateitems(){
 var list;
 list = this.menuany.filter((item,index,self)=> self.findIndex((t)=>{return t.nombrecat==item.nombrecat})== index)
-
 return list;
-
-
-
-
-
 }
-
-
-
-
 }

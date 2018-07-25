@@ -1,3 +1,4 @@
+import { GlobalProvider } from './../../providers/global/global_Variables';
 import { RestService } from './../../providers/RestService';
 import { HomePage } from './../home/home';
 import { RestauranteClass } from './RestauranteClass';
@@ -7,6 +8,7 @@ import { IonicPage, NavController, NavParams} from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 import 'rxjs/add/operator/map';
+
 /**
  * Generated class for the RestaurantePage page.
  *
@@ -31,11 +33,12 @@ Restaurantearray : RestauranteClass[]=[];
      public toastCtrl: ToastController,
      private alertCtrl: AlertController,
      public RestService : RestService,
+     public GlobalProvider : GlobalProvider
     
     
     ) {
 
-    let DataLocal = this.http.get("http://35.202.49.203/backend/retrieve_restaurants.php").map(res => res.json()).subscribe(
+    let DataLocal = this.http.get(this.GlobalProvider.GetServerUrl() + "/retrieve_restaurants.php").map(res => res.json()).subscribe(
       data=>{
       console.log(data);
       this.RestService.initializerestaurant(data);
