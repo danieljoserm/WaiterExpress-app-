@@ -1,7 +1,8 @@
+import { regexValidators } from './../validators/validator';
 import { HomePage } from './../home/home';
 import { RestaurantePage } from './../restaurante/restaurante';
 import { RegisterPage } from './../register/register';
-import {FormBuilder,FormGroup} from '@angular/forms';
+import {FormBuilder,FormGroup, Validators} from '@angular/forms';
 
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -22,7 +23,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LoginPage {
 
- credentialsForm : FormGroup;
+ public submitAttempt : boolean =false; 
+ public credentialsForm : FormGroup;
     
      
 
@@ -31,10 +33,19 @@ export class LoginPage {
     private formBuilder : FormBuilder,
   
      ) {
-
+   
+     
       this.credentialsForm = this.formBuilder.group({
-        email:[''],
-        password:['']
+        email:['',
+        Validators.compose([     Validators.pattern(regexValidators.email), Validators.required      ])
+        
+       ],
+        password:['', Validators.compose([ Validators.pattern(regexValidators.password), Validators.required
+
+        ])
+        
+        
+        ]
       })
 
 
@@ -50,14 +61,20 @@ export class LoginPage {
 
   OpenRegisterPage(){
 
+
+
+
   this.navCtrl.push(RegisterPage);  
 
 
   }
   OpenRestaurantePage(){
 
-  this.navCtrl.push(RestaurantePage);  
+  this.submitAttempt = true;
+  if(this.credentialsForm.valid){  
 
+  this.navCtrl.push(RestaurantePage);  
+  }
 
   }
 

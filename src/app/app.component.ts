@@ -1,5 +1,5 @@
 import { RestService } from './../providers/RestService';
-
+import { GlobalProvider } from './../providers/global/global_Variables';
 import { MenuService } from './../providers/MenuService';
 import { RestaurantePage } from './../pages/restaurante/restaurante';
 import { LoginPage } from './../pages/login/login';
@@ -38,6 +38,7 @@ export class MyApp {
     public menuService:MenuService,
     public RestService:RestService,
     public http:Http,
+    public globalProvider :GlobalProvider,
 
   ) {
 
@@ -95,7 +96,7 @@ export class MyApp {
      }
 
      this.order=new order(1,this.RestService.GetChosenRestaurant(),this.request);
-     let DataLocal = this.http.post("http://35.202.49.203/backend/send_order.php",JSON.stringify(this.order)).map(res => res.json()).subscribe(
+     let DataLocal = this.http.post(this.globalProvider.GetServerUrl()+"/send_order.php",JSON.stringify(this.order)).map(res => res.json()).subscribe(
       
    
       data=>{
